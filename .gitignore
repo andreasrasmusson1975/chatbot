@@ -1,6 +1,5 @@
 # Ignore the following folders
 images/
-evaluation/
 vector_databases/
 docs/
 models/
