@@ -22,10 +22,10 @@ The following third-party software needs to be installed:
 4. Python 3.10.0 (https://www.python.org/ftp/python/3.10.0/python-3.10.0-amd64.exe)
 
 ### Installation procedure
-Create the openai_api_key environment vairable, install the dependencies above and then run the install.bat script: This script will:
+Create the openai_api_key environment variable, install the dependencies above and then run the install.bat script: This script will:
 
 1. Create an environment and install the packages in requirements.txt
-2. Download the space sentence splitter (en_core_web_sm)
+2. Download the spaCy tokenizer and sentence splitter (en_core_web_sm)
 3. Download the PM209 dataset and extract the manuals.
 4. Download the all-MiniLM-L6-v2 model, used for embedding
 5. Create vector databases for each of the manuals in the dataset.
