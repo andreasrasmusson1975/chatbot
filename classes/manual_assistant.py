@@ -91,7 +91,7 @@ class ManualAssistant:
         query_embedding = np.array(query_embedding, dtype=np.float32)
         
         # Get the top five manual text chunks related to the query 
-        top_chunks = self.vector_db.search_manual(query_embedding, self.manual_name, top_k=5)[0]
+        top_chunks = self.vector_db.search_manual(query_embedding,5)[0]
         # Build the prompt and add it to the messages produced so far
         new_prompt = self.prompt_builder.build_prompt(user_query, top_chunks, current_manual=self.manual_name)
         if not self.messages:

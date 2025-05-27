@@ -41,6 +41,8 @@ class VectorDatabase:
             query_embedding (np.ndarray): A numpy array representation of an embedded query
             top_k (int): 
         """
+        if top_k <= 0:
+            raise ValueError("top_k must be greater than 0.")
         # Get the indices from the metadata
         indices = [i for i, meta in enumerate(self.metadata)]
         # Search the faiss index for indices with text related to the query
