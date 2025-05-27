@@ -35,7 +35,7 @@ def _process_page(task: str, path: Path) -> list[dict]:
     """
     # Extract the text from the image at the given path
     extractor = TextExtractor(path)
-    text = extractor.get_text()
+    text = extractor.text
     # Create chunks using semantic chunking
     chunker = SemanticChunker()
     chunks = chunker.chunk(text)

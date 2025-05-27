@@ -36,7 +36,7 @@ def _process_manual(manual_name: str,records: list[dict]) -> str:
     # Create embeddings and initialize a VectorDatabase
     embeddings, manual_records = Embedder().encode(manual_records)
     vdb = VectorDatabase(dim=384)
-    # Create the folder to stor the vector database in and the path to the file to save.
+    # Create the folder to store the vector database in and the path to the file to save.
     base_dir = Path(__file__).resolve().parent.parent / "vector_databases" / manual_name
     base_dir.mkdir(parents=True, exist_ok=True)
     output_path = base_dir / "vdb.pkl"
