@@ -35,7 +35,7 @@ Create the openai_api_key environment variable and then run the install.bat scri
 7. Download the all-MiniLM-L6-v2 model, used for embedding
 8. Create vector databases for each of the manuals in the dataset.
 
-It takes a while, even on a decent computer, so be patient
+Feel free to remove commands from install.bat if you already have the dependencies installed. The script takes a while, even on a decent computer, so be patient.
 
 ## Running the application
 Simply run the run_app.bat script.
