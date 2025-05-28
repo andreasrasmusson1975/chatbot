@@ -93,7 +93,7 @@ Sparar och sen laddar in en befintlig modell.
 Deep Learning modeller kan ta lång tid att träna, då kan GPU via t.ex. Google Colab skynda på träningen avsevärt. Skriv mycket kortfattat vad CPU och GPU är.
 
 ### Svar:
-CPU står för Central Processing Unit och är den del av en dator som vi vanligtvis kallar processorn. Den sköter alla möjliga beräkningar som görs i en dator. Den har oftast ett begränsat antal, säg 4-16 kraftfulla kärnor som kan köra parallellt. GPU står för Graphical Processing Unit och är en del av den del av datorn som vi vanligtvis kallar grafikkortet. En GPU har till skillnad från en CPU många enkla kärnor (tusentals) och kan därför, med hjälp av parallellisering utföra beräkningar väldigt snabbt. GPU:er lämpar sig därför väl för beräkningstunga operationer som till exempel träning av neurala nätverk (eller rendera spel).
+CPU står för Central Processing Unit och är den del av en datorn som vi vanligtvis kallar processorn. Den sköter alla möjliga beräkningar som görs i en dator. Den har oftast ett begränsat antal, säg 4-16 kraftfulla kärnor som kan köra parallellt. GPU står för Graphical Processing Unit och är en del av den del av datorn som vi vanligtvis kallar grafikkortet. En GPU har till skillnad från en CPU många enkla kärnor (tusentals) och kan därför, med hjälp av parallellisering utföra beräkningar väldigt snabbt. GPU:er lämpar sig därför väl för beräkningstunga operationer som till exempel träning av neurala nätverk (eller rendera spel).
 
 
 
