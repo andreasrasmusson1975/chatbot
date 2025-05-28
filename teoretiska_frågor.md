@@ -26,25 +26,25 @@ på generaliseringsförmågan hos modellen.
 ### Fråga 5
 Förklara vad nedanstående kod gör:
 
- n_cols = x_train.shape[1]
- nn_model = Sequential()
- nn_model.add(Dense(100, activation='relu', input_shape=(n_cols, )))
- nn_model.add(Dropout(rate=0.2))
- nn_model.add(Dense(50, activation='relu'))
- nn_model.add(Dense(1, activation='sigmoid'))
- 
- nn_model.compile(
-    optimizer='adam',
-    loss='binary_crossentropy',
-    metrics=['accuracy' ])
- 
- early_stopping_monitor = EarlyStopping(patience=5)
- nn_model.fit(
-    x_train,
-    y_train,
-    validation_split=0.2,
-    epochs=100,
-    callbacks=[early_stopping_monitor])
+    n_cols = x_train.shape[1]
+    nn_model = Sequential()
+    nn_model.add(Dense(100, activation='relu', input_shape=(n_cols, )))
+    nn_model.add(Dropout(rate=0.2))
+    nn_model.add(Dense(50, activation='relu'))
+    nn_model.add(Dense(1, activation='sigmoid'))
+    
+    nn_model.compile(
+        optimizer='adam',
+        loss='binary_crossentropy',
+        metrics=['accuracy' ])
+    
+    early_stopping_monitor = EarlyStopping(patience=5)
+    nn_model.fit(
+        x_train,
+        y_train,
+        validation_split=0.2,
+        epochs=100,
+        callbacks=[early_stopping_monitor])
 
 ### Svar:
 Koden ovan skapar en sekventiell modell. Till denna läggs först ett tätt lager bestående av 100 neuroner. Aktiveringsfunktionen i detta lager är "rektified linear unit". Därefter läggs ett dropout lager till med en rate på 0.2, dvs varje neuron av de 100 neuronerna i det första lagret har 20%
