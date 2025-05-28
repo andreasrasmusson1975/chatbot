@@ -33,7 +33,7 @@ Vilket betyg anser du att du ska ha och varför?
 Jag har:
 
 1. gjort en chattbot som använder sig av RAG-teknik för att begränsa svaren till en viss kontext
-2. gjort ett system för att evaluera chattboten.
+2. gjort ett system för att evaluera chattboten (se evaluate.py, evaluator.py och evaluation.xlsx).
 3. skrivit kod som fungerar och dokumenterat den väl.
 4. besvarat de teoretiska frågorna kort och koncist
 5. diskuterat potentiella användningsområden och risker
