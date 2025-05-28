@@ -174,7 +174,7 @@ if tab_selection == "💬 Chat":
                         path = line.split(":")[-1].strip().replace("\\", "/")
                         image_paths.append(path)
             # Set the session state last_image_paths list to be equal to image_paths
-            st.session_state.last_image_paths = image_paths
+            st.session_state.last_image_paths = sorted(image_paths)
             # Add the user_input and visible_response strings to the chat history
             st.session_state.chat.append((user_input, visible_response))
 
