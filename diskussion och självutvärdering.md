@@ -46,6 +46,6 @@ Vad har varit mest utmanande i arbetet och hur har du hanterat det?
 #### Svar:
 Jag började med att implementera chattboten med hjälp av det API som openai tillhandahåller. Därefter började jag arbeta med
 att migrera lösningen till en lokal modell. Men vilken modell jag än provade så var den antingen alldeles för långsam eller 
-så gave den inte lika bra som openai's modeller. Till slut valde jag därför att behålla den ursprungliga lösningen. Hade jag 
+så gav den inte lika bra svar som openai's modeller. Till slut valde jag därför att behålla den ursprungliga lösningen. Hade jag 
 haft mer tid, hade jag fortsatt att arbeta med att få en lokal modell tillräckligt bra. 
 
