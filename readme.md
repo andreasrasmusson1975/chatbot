@@ -21,21 +21,18 @@ The following third-party software are needed:
 3. Microsoft Visual C++ Redistributable for Visual Studio 2015–2022 (x64)
 4. Python 3.10.0
 
-These will all (except of course the api key) be installed if you run install.bat.
+These will all (except of course the api key) be installed interactively if you run __install_third_party.bat.
 
 ### Installation procedure
-Create the openai_api_key environment variable and then run the install.bat script: This script will:
+Create the openai_api_key environment variable, run  __install_third_party.bat (if needed) and then run the __setup.bat script. This script will:
 
-1. Interactively install the Visual C++ Redistributalbe
-2. Interactively install Python 3.10.0
-3. Interactively install Tesseract 
-4. Create an environment and install the packages in requirements.txt
-5. Download the spaCy tokenizer and sentence splitter (en_core_web_sm)
-6. Download the PM209 dataset and extract the manuals.
-7. Download the all-MiniLM-L6-v2 model, used for embedding
-8. Create vector databases for each of the manuals in the dataset.
+1. Create an environment and install the packages in requirements.txt
+2. Download the spaCy tokenizer and sentence splitter (en_core_web_sm)
+3. Download the PM209 dataset and extract the manuals.
+4. Download the all-MiniLM-L6-v2 model, used for embedding
+5. Create vector databases for each of the manuals in the dataset.
 
-Feel free to remove commands from install.bat if you already have the dependencies installed. The script takes a while, even on a decent computer, so be patient.
+The setup takes a while, even on a decent computer, so be patient.
 
 ## Running the application
-Simply run the run_app.bat script.
+Simply run the _run_app.bat script.
