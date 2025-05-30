@@ -100,6 +100,7 @@ if tab_selection == "💬 Chat":
         st.markdown("Don't know what to ask? Here are a few to get you started:")
         df = evaluation_df[evaluation_df['Manual']==selected_manual]
         df = df[df['Local answer']!="I'm afraid I can't find that information in the manual."]
+        df = df[df['Reference answer']!="I'm afraid I can't find that in the manual."]
         for i in range(len(df)):
             st.markdown(f"  {i+1}. *{df.iloc[i,2]}*")
     # Display the conversation had so far
