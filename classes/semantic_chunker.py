@@ -25,12 +25,8 @@ class SemanticChunker:
             max_tokens (int): The maximum number of tokens allowed per chunk. Default is 512.
             overlap (int): The approximate number of tokens to include from the end of the previous chunk
                 in the beginning of the next, to maintain context. Default is 50.
-            model_name (str): The name of the OpenAI model to use for token counting via `tiktoken`.
+            model_name (str): The name of the OpenAI model to use for token counting via tiktoken.
                 This determines the tokenization strategy. Default is 'gpt-4o-mini'.
-
-        Initializes:
-            - A spaCy pipeline for sentence segmentation.
-            - A tokenizer from `tiktoken` for accurate token counting according to the model.
         """
         # Store parameters
         self.max_tokens = max_tokens
@@ -65,7 +61,7 @@ class SemanticChunker:
         current_tokens = 0
         # Iterate over the sentences
         for sentence in sentences:
-            # Get the number of tokens of the encoding or the current sentence
+            # Get the number of tokens of the encoding of the current sentence
             sentence_tokens = len(self.enc.encode(sentence))
             # If this number is larger than max_tokens, we skip the sentence altogether.
             if sentence_tokens > self.max_tokens:
@@ -109,11 +105,15 @@ class SemanticChunker:
                             break
                     current_chunk = overlap_chunk
                     current_tokens = overlap_tokens
+                # Otherwise, we reset current_chunk and current_tokens
                 else:
                     current_chunk = []
                     current_tokens = 0
+            # append the current chunk to the current_chunk list
+            # and update current_tokens
             current_chunk.append(sentence)
             current_tokens += sentence_tokens
+        # If current_chunk is not empty add it to the chunks list
         if current_chunk:
             chunks.append(" ".join(current_chunk))
 

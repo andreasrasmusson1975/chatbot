@@ -2,15 +2,7 @@
 Module: manual_assistant
 
 This module defines the ManualAssistant class, which facilitates sending user queries to
-a gpt-4o-mini model via the OpenAI API 
-
-Workflow:
-1. Loads the vector database for the manual_name given as a parameter
-2. Loads an embedder used for embedding user queries
-3. Loads a prompt builder used to create the full prompt that is sent to the model.
-4. An OpenAI client is initialized
-5  The assistant is now ready to answer queries via the stream_user_query and 
-   send_user_query methods
+a gpt-4o-mini model via the OpenAI API. 
 """
 
 
@@ -97,7 +89,7 @@ class ManualAssistant:
         if not self.messages:
             self.messages.append(new_prompt[0])
         self.messages.append(new_prompt[1])
-
+        
         if not len(new_prompt) == 3:
             # Send the prompt (full message history actually) to the model and make sure it streams the result back
             stream = self.client.chat.completions.create(
@@ -155,7 +147,7 @@ class ManualAssistant:
                 messages=self.messages,
                 temperature=0.0
             )
-            # Extract the reply, add it to the messages list and return it
+            # Extract the reply and add it to the messages list
             assistant_reply = response.choices[0].message.content
             self.messages.append({"role": "assistant", "content": assistant_reply})
         else:

@@ -1,13 +1,13 @@
 """
 This module defines the PromptBuilder class, which is responsible for constructing
-structured prompts tailored for strict retrieval-augmented generation (RAG) scenarios.
+structured prompts tailored for retrieval-augmented generation (RAG) scenarios.
 
 The generated prompts are designed for chat models that must answer user queries 
-using only provided manual excerpts. The system prompt enforces strict behavioral 
+using only provided excerpts. The system prompt enforces strict behavioral 
 rules to prevent the use of outside knowledge, guessing, or hallucination.
 
 The prompt construction logic includes:
-- A reusable system prompt defining assistant behavior.
+- A system prompt defining assistant behavior.
 - Context filtering to include only relevant chunks from a specified manual.
 - A fallback response when no relevant context is available.
 
@@ -49,10 +49,10 @@ class PromptBuilder:
             
     def build_prompt(
         self,
-        query,
-        context_chunks,
-        current_manual
-    ):
+        query: str,
+        context_chunks: list[dict],
+        current_manual: str
+    ) -> list[dict]:
         """
         Builds a structured chat prompt for a question-answering assistant based on manual excerpts.
 
@@ -72,11 +72,11 @@ class PromptBuilder:
                 {"role": "user", "content": query},
                 {"role": "assistant", "content": "I'm afraid I can't find that information in the manual."}
             ]
-        
+        # build the context string
         context_string = ""
         for chunk in context_chunks:
             context_string += f"[Source: {chunk['path']}]\n{chunk['text']}\n\n"
-        
+        # build the user prompt
         user_prompt = (
             f"Answer the following question:\n" 
             f"Context:\n{context_string.strip()}\n\n"

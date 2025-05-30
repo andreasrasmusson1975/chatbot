@@ -1,7 +1,7 @@
 """
 This module provides tools for creating structured records from document pages.
 
-It defines a RecordCreator class that takes a dictionary mapping manual names to lists of file paths.
+It defines a RecordCreator class that takes as a parameter a dictionary mapping manual names to lists of file paths.
 Each file is processed to extract text and semantically chunk it using TextExtractor and SemanticChunker.
 
 The result is a list of records with manual name, file path, chunk index, and chunk text.
@@ -23,7 +23,7 @@ def _process_page(task: str, path: Path) -> list[dict]:
     semantic chunking.
 
     Args:
-        tasks: (dict): A dictionary representing a task created with the class TaskCreator
+        task: (str): A manual name
         path: (Path): A path to a manual page image
 
     Returns:
@@ -59,13 +59,16 @@ class RecordCreator:
     A class for processing a collection of chunking tasks created with the class
     TaskGenerator. Processing is parallelized for speed.
 
+    Attributes:
+        tasks - a dictionary of record creation tasks
+
     """
-    def __init__(self, tasks):
+    def __init__(self, tasks: dict):
         self.tasks = tasks
 
     def create_records(self):
         """
-        Processes all the chunking tasks in a task dictionary using the
+        Processes all the tasks in the task dictionary using the
         _process_page_star function. Processing is parallelized. 
 
         Returns:

@@ -17,10 +17,10 @@ Usage:
     python create_vector_databases.py
 
 Side Effects:
-    - Creates or overwrites the `vector_databases/` directory.
+    - Creates or overwrites the vector_databases/ directory.
 
 Note:
-    This script is designed to be run after setting up the `docs/` folder with structured manual images.
+    This script is designed to be run after setting up the docs/ folder with structured manual images.
 """
 
 if __name__ == '__main__':
@@ -62,6 +62,6 @@ if __name__ == '__main__':
     manual_names = list(set(list([record['manual'] for record in records])))
     DbCreator(records,manual_names).create_databases()
     
-    # Celebrate 😊
+    # Celebrate
     os.system('cls')
     print('\n🎉 All done!')

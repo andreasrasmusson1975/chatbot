@@ -26,7 +26,7 @@ class VectorDatabase:
         Adds embeddings and metadata to the database.
 
         Args:
-            embeddings (str): A numpy array of embeddings
+            embeddings (ndarray): A numpy array of embeddings
             records (list[dict]): a list of metadata in dictionary form 
         """
         self.index.add(embeddings)
@@ -38,12 +38,12 @@ class VectorDatabase:
         query embedding.
 
         Args:
-            query_embedding (np.ndarray): A numpy array representation of an embedded query
+            query_embedding (ndarray): A numpy array representation of an embedded query
             top_k (int): 
         """
         if top_k <= 0:
             raise ValueError("top_k must be greater than 0.")
-        # Get the indices from the metadata
+        # Get all the indices from the metadata
         indices = [i for i, meta in enumerate(self.metadata)]
         # Search the faiss index for indices with text related to the query
         # Return the five closest embeddings

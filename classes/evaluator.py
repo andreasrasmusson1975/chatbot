@@ -5,16 +5,6 @@ This module defines the Evaluator class, which facilitates automated testing and
 local question-answering assistant (ManualAssistant) using GPT-4.1 via the OpenAI API as a judge
 and question generator.
 
-Workflow:
-1. Loads manual text chunks from disk for a given manual.
-2. Uses GPT-4.1 to generate challenging questions (including unanswerable ones).
-3. Sends the questions to the local assistant and records its responses.
-4. Asks GPT-4.1 to score and justify each local response based on:
-   - Factual accuracy
-   - Appropriateness of "I don't know" answers
-   - Clarity of the response
-5. Outputs the results as a pandas DataFrame.
-
 The module is intended for evaluating the factual and qualitative performance of local QA systems
 against a trusted language model.
 """
@@ -217,7 +207,7 @@ class Evaluator:
         Each record in the evaluation dictionary contains:
             - The question
             - The reference (ground-truth) answer
-            - The answer from the local model
+            - The answer from the local manual assistant
             - A numerical score (1-5)
             - A textual justification for the score
 

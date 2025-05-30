@@ -1,17 +1,16 @@
 """
 This module provides the text extractor class for extracting text from an image. Extraction
-is performed using tesseract which require third party installation.
+is performed using tesseract which requires third party installation.
 """
 
 # Perform necessary imports
 from PIL import Image
 import pytesseract
-import os
 from pathlib import Path
 
 # Explicitly set the path to tesseract.exe. This is not required if the user has re-
 # booted after installation of tesseract but better safe than sorry.
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 class TextExtractor:
     """

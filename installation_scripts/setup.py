@@ -124,8 +124,8 @@ if __name__ == '__main__':
         Copies all subfolders from a source directory to a destination directory.
 
         Args:
-            src (Path or str): Source directory containing subfolders to copy.
-            dst (Path or str): Destination directory where subfolders will be copied.
+            src (Path): Source directory containing subfolders to copy.
+            dst (Path): Destination directory where subfolders will be copied.
         """
         # Iterate over the subfolders in the source folder and copy them to the
         # destination folder 
@@ -167,7 +167,7 @@ if __name__ == '__main__':
     print('🔄️ Downloading all-MiniLM-L6-v2 model...')
     SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2').save(str(base_folder / 'models' / 'all-MiniLM-L6-v2'))
 
-    # Delet objects that are no longer needed
+    # Delete objects that are no longer needed
     os.system("cls")
     print('🔄️ Performing cleanup...')
     delete_file_if_exists(base_folder / 'PM209.zip')

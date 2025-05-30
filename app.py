@@ -99,7 +99,7 @@ if tab_selection == "💬 Chat":
     with st.chat_message('assistant'):
         st.markdown("Don't know what to ask? Here are a few to get you started:")
         df = evaluation_df[evaluation_df['Manual']==selected_manual]
-        df = df[df['Reference answer']!="I'm afraid I can't find that in the manual."]
+        df = df[df['Local answer']!="I'm afraid I can't find that in the manual."]
         for i in range(len(df)):
             st.markdown(f"  {i+1}. *{df.iloc[i,2]}*")
     # Display the conversation had so far
@@ -140,7 +140,7 @@ if tab_selection == "💬 Chat":
                 full_response += chunk
                 # If we are still streaming, do the following:
                 if streaming_answer:
-                    # If the end marker
+                    # If the end marker is in the current chunk, proceed as follows:
                     if end_marker in chunk:
                         # Split the chunk containing the end marker into a before-
                         # and after part.

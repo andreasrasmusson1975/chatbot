@@ -1,8 +1,8 @@
 """
 This module provides the TaskGenerator class for generating text extraction and record creation tasks
 (refer to text_extractor.py and record_creator.py for details) for the contents of a folder containing 
-subfolders with manual images (the docs folder - only visible after the installation script, install.bat, 
-has been run).
+subfolders with manual images (the docs folder - only visible after the installation scripts 
+have been run).
 """
 
 # Perform necessary imports 
@@ -11,6 +11,10 @@ from pathlib import Path
 class TaskGenerator:
     """
     A class for generating text extraction and record creation tasks
+
+    Attributes:
+        data_dir (Path) - the path to the folder with manuals
+        manual_folders (list) - a list of folder paths for each manual
     """
     def __init__(self,data_dir: str):
         # Set the data directory and initialize the manual_folders list

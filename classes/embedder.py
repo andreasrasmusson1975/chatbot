@@ -1,15 +1,17 @@
 """
 A simple wrapper around a SentenceTransformer model for embedding text records.
-
-This class loads a local SentenceTransformer model (by default 'all-MiniLM-L6-v2')
-and provides a method to convert batches of dictionary records into dense vector
-embeddings suitable for similarity search or downstream tasks.
 """
+# Perform necessary imports
 import numpy as np
 from pathlib import Path
 from sentence_transformers import SentenceTransformer
 
 class Embedder:
+    """
+    This class loads a local SentenceTransformer model (by default 'all-MiniLM-L6-v2')
+    and provides a method to convert batches of dictionary records into dense vector
+    embeddings suitable for similarity search or downstream tasks.
+    """
     def __init__(self):
         """
         Initializes the Embedder by loading a SentenceTransformer model from a local path.
